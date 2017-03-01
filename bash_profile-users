@@ -1,0 +1,40 @@
+#############################################################
+# This is simple menu I add to the end of my .bash_profile
+# script to list my powerbroker groups and save a few key strokes.
+#############################################################
+cat <<EOF
+@@@  @@@  @@@  @@@@@@@@  @@@        @@@@@@@   @@@@@@   @@@@@@@@@@   @@@@@@@@
+@@@  @@@  @@@  @@@@@@@@  @@@       @@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@
+@@!  @@!  @@!  @@!       @@!       !@@       @@!  @@@  @@! @@! @@!  @@!
+!@!  !@!  !@!  !@!       !@!       !@!       !@!  @!@  !@! !@! !@!  !@!
+@!!  !!@  @!@  @!!!:!    @!!       !@!       @!@  !@!  @!! !!@ @!@  @!!!:!
+!@!  !!!  !@!  !!!!!:    !!!       !!!       !@!  !!!  !@!   ! !@!  !!!!!:
+!!:  !!:  !!:  !!:       !!:       :!!       !!:  !!!  !!:     !!:  !!:
+:!:  :!:  :!:  :!:        :!:      :!:       :!:  !:!  :!:     :!:  :!:
+ :::: :: :::    :: ::::   :: ::::   ::: :::  ::::: ::  :::     ::    :: ::::
+  :: :  : :    : :: ::   : :: : :   :: :: :   : :  :    :      :    : :: :: a
+EOF
+
+echo "Welcome back, who do you want to be today?"
+echo "1, user1"
+echo "2, user2"
+echo "3, user3"
+echo "*, To exit this script"
+echo -n "Enter your choice:"
+read text
+echo " You chose " $text
+
+case $text in
+1)
+  pbrun su - user1
+  ;;
+2)
+  pbrun su - user2
+  ;;
+3)
+  pbrun su - user3
+  ;;
+*)
+  echo "Bye"
+  ;;
+esac
